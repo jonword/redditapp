@@ -50,8 +50,8 @@ const PostCard = (props: Post) => {
               src={props.url}
               className="post-media w-full pb-2"
               alt="post"
-              width={300}
-              height={300}
+              width={600}
+              height={400}
             />
           </div>
         ) : (
@@ -59,7 +59,7 @@ const PostCard = (props: Post) => {
         )}
         {props.post_hint === "hosted:video" ? (
           <div className="media-container flex justify-center">
-            <video controls className="post-video">
+            <video controls className="post-video w-[600px] h-[400px]">
               <source src={props.reddit_video} type="video/mp4" />
             </video>
           </div>
@@ -68,7 +68,7 @@ const PostCard = (props: Post) => {
         )}
       </div>
       <div className="comment-container flex justify-between items-center border-t px-1">
-        <div className="comment-icon flex items-center gap-2">
+        <div className="comment-icon pt-2 flex items-center gap-2">
           <FaRegCommentAlt />
           <p className="text-sm">{props.num_comments}</p>
         </div>
