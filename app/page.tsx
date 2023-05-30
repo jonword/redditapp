@@ -1,8 +1,10 @@
+import { useState } from "react";
 import PostCard, { Post } from "../components/posts/postcard";
 
 async function getPosts() {
   const res = await fetch("https://www.reddit.com/r/popular.json");
-  const posts = res.json();
+  const data = await res.json();
+  const posts: Post[] = data.data.children.map((post: any) => post.data);
 
   if (!res.ok) {
     throw new Error("Failed to fetch posts. Try again!");
