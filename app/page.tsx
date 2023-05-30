@@ -1,16 +1,17 @@
-import PostCard from "../components/posts/postcard";
+import PostCard, { Post } from "../components/posts/postcard";
 
 async function getPosts() {
   const res = await fetch("https://www.reddit.com/r/popular.json");
+  const posts = res.json();
 
   if (!res.ok) {
     throw new Error("Failed to fetch posts. Try again!");
   }
-  return res.json();
+  return posts;
 }
 
 export default async function Home() {
-  const data: any[] = await getPosts();
+  const data: Post[] = await getPosts();
 
   console.log(data);
 
