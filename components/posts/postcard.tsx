@@ -28,6 +28,8 @@ const PostCard = (props: Post) => {
             `https://www.redditinc.com/assets/images/site/reddit-logo.png`
           }
           alt={props.display_name}
+          width={20}
+          height={20}
           className="post-icon"
         />
         <p className="subreddit-name">{props.subreddit_name_prefixed}</p>
@@ -38,7 +40,13 @@ const PostCard = (props: Post) => {
         <p>{props.title}</p>
         {props.thumbnail && props.post_hint === "image" ? (
           <div className="media-container">
-            <Image src={props.url} className="post-media" alt="post" />
+            <Image
+              src={props.url}
+              className="post-media"
+              alt="post"
+              width={300}
+              height={300}
+            />
           </div>
         ) : (
           ""
