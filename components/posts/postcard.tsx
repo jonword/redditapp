@@ -59,7 +59,7 @@ const PostCard = (props: Post) => {
         )}
         {props.post_hint === "hosted:video" ? (
           <div className="media-container flex justify-center">
-            <video controls className="post-video w-[600px] h-[400px]">
+            <video controls className="post-video" width="600">
               <source src={props.reddit_video} type="video/mp4" />
             </video>
           </div>
