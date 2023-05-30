@@ -20,8 +20,11 @@ export type Post = {
 
 const PostCard = (props: Post) => {
   return (
-    <div className="post-card" key={props.id}>
-      <div className="post-details">
+    <div
+      className="post-card bg-white flex flex-col p-2 border border-gray-300 mb-2 w-full"
+      key={props.id}
+    >
+      <div className="post-details flex items-center justify-start border-b gap-1 pl-4">
         <Image
           src={
             props.icon_img ||
@@ -30,19 +33,20 @@ const PostCard = (props: Post) => {
           alt={props.display_name}
           width={20}
           height={20}
-          className="post-icon"
         />
         <p className="subreddit-name">{props.subreddit_name_prefixed}</p>
-        <span>•</span>
-        <p className="post-author">Posted by u/{props.author}</p>
+        <span className="text-gray-400">•</span>
+        <p className="post-author text-gray-500/80 text-sm">
+          Posted by u/{props.author}
+        </p>
       </div>
-      <div className="title">
+      <div className="title flex flex-col justify-center items-center text-base p-4">
         <p>{props.title}</p>
         {props.thumbnail && props.post_hint === "image" ? (
-          <div className="media-container">
+          <div className="media-container flex justify-center mt-2">
             <Image
               src={props.url}
-              className="post-media"
+              className="post-media w-full pb-2"
               alt="post"
               width={300}
               height={300}
@@ -52,7 +56,7 @@ const PostCard = (props: Post) => {
           ""
         )}
         {props.post_hint === "hosted:video" ? (
-          <div className="media-container">
+          <div className="media-container flex justify-center">
             <video controls className="post-video">
               <source src={props.reddit_video} type="video/mp4" />
             </video>
@@ -61,12 +65,12 @@ const PostCard = (props: Post) => {
           ""
         )}
       </div>
-      <div className="comment-container">
-        <div className="comment-icon">
+      <div className="comment-container flex justify-between items-center border-t pl-4">
+        <div className="comment-icon flex items-center gap-2">
           <FaRegCommentAlt />
-          <p>{props.num_comments}</p>
+          <p className="text-sm">{props.num_comments}</p>
         </div>
-        <div className="post-votes">
+        <div className="post-votes flex items-center pr-4 text-sm gap-2">
           <FaArrowUp />
           {props.ups}
           <FaArrowDown />

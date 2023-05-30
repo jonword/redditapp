@@ -15,11 +15,9 @@ async function getPosts() {
 export default async function Home() {
   const data: Post[] = await getPosts();
 
-  console.log(data);
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="flex flex-col my-16 max-w-[700px] w-full p-8 border border-gray-400">
+      <div className="flex flex-col my-16 max-w-[700px] w-full p-8">
         {data.map((post) => {
           return (
             <PostCard
