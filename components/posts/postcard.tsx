@@ -24,7 +24,7 @@ const PostCard = (props: Post) => {
       className="post-card bg-white flex flex-col p-2 border border-gray-300 mb-2 w-full"
       key={props.id}
     >
-      <div className="post-details flex items-center justify-start border-b gap-1 pl-4">
+      <div className="post-details flex items-center justify-start border-b gap-1 pl-1">
         <Image
           src={
             props.icon_img ||
@@ -34,7 +34,9 @@ const PostCard = (props: Post) => {
           width={20}
           height={20}
         />
-        <p className="subreddit-name">{props.subreddit_name_prefixed}</p>
+        <p className="subreddit-name text-sm font-bold">
+          {props.subreddit_name_prefixed}
+        </p>
         <span className="text-gray-400">•</span>
         <p className="post-author text-gray-500/80 text-sm">
           Posted by u/{props.author}
@@ -65,7 +67,7 @@ const PostCard = (props: Post) => {
           ""
         )}
       </div>
-      <div className="comment-container flex justify-between items-center border-t pl-4">
+      <div className="comment-container flex justify-between items-center border-t px-1">
         <div className="comment-icon flex items-center gap-2">
           <FaRegCommentAlt />
           <p className="text-sm">{props.num_comments}</p>
