@@ -1,5 +1,7 @@
 import Navbar from "@/components/navbar";
 import "./globals.css";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata = {
   title: "Reddit App",
@@ -15,7 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        <main className="bg-gray-400/75">{children}</main>
+        <Suspense fallback={<Loading />}>
+          <main className="bg-gray-400/75">{children}</main>
+        </Suspense>
       </body>
     </html>
   );
