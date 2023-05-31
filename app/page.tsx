@@ -34,6 +34,8 @@ export default async function Home() {
               url={post.url}
               num_comments={post.num_comments}
               ups={post.ups}
+              media={post.media}
+              fallback_url={post.fallback_url}
             />
           );
         })}

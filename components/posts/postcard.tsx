@@ -12,7 +12,9 @@ export type Post = {
   title: string;
   thumbnail: string;
   post_hint: string;
+  media: any;
   reddit_video: any;
+  fallback_url: string;
   url: string;
   num_comments: number;
   ups: number;
@@ -60,7 +62,10 @@ const PostCard = (props: Post) => {
         {props.post_hint === "hosted:video" ? (
           <div className="media-container flex justify-center">
             <video controls className="post-video" width="600">
-              <source src={props.reddit_video} type="video/mp4" />
+              <source
+                src={props.media.reddit_video.fallback_url}
+                type="video/mp4"
+              />
             </video>
           </div>
         ) : (
