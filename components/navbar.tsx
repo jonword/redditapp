@@ -9,12 +9,12 @@ const Navbar = () => {
     "
     >
       <div className="flex items-center gap-2">
-        <FaReddit className="text-amber-700 text-3xl" />
-        <p className="text-2xl">Reddit</p>
+        <FaReddit className="text-stone-500 text-3xl" />
+        <p className="text-2xl">reddit</p>
       </div>
       <form className="flex gap-2">
-        <input className="border border-gray-400 rounded-xl w-[300px]" />
-        <button className="">
+        <input className="border border-gray-400 rounded-3xl w-[200px] md:w-[500px] p-2 bg-gray-200" />
+        <button className="text-xl">
           <HiOutlineSearch />
         </button>
       </form>

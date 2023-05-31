@@ -16,8 +16,8 @@ export default async function Home() {
   const data: Post[] = await getPosts();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between py-4 px-24">
-      <div className="flex flex-col min-w-[375px] max-w-[700px] w-full p-8">
+    <main className="flex min-h-screen flex-col items-center justify-between md:py-4 px-2 md:px-24">
+      <div className="flex flex-col min-w-[375px] max-w-[700px] w-full">
         {data.map((post) => {
           return (
             <PostCard
