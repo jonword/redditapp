@@ -3,6 +3,7 @@ import { FaReddit } from "react-icons/fa";
 import { CiUser } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import { HiOutlineSearch } from "react-icons/hi";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -10,10 +11,12 @@ const Navbar = () => {
       className="sticky top-0 flex items-center p-4 h-16 w-full justify-between bg-white border
     "
     >
-      <div className="flex items-center gap-2">
-        <FaReddit className="text-stone-500 text-3xl" />
-        <p className="text-2xl font-extralight">reddit</p>
-      </div>
+      <Link href="/">
+        <div className="flex items-center gap-2">
+          <FaReddit className="text-stone-500 text-3xl" />
+          <p className="text-2xl font-extralight">reddit</p>
+        </div>
+      </Link>
       <form className="flex gap-2">
         <input className="border border-gray-400 rounded-3xl w-[200px] md:w-[500px] p-2 bg-gray-200" />
         <button className="text-xl">
