@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar";
 import "./globals.css";
 import { Suspense } from "react";
 import Loading from "./loading";
+import BackToTopButton from "@/components/backToTopButton";
 
 export const metadata = {
   title: "Reddit App",
@@ -17,8 +18,12 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
+
         <Suspense fallback={<Loading />}>
-          <main className="bg-gray-400/75">{children}</main>
+          <main className="bg-gray-400/75">
+            {children}
+            <BackToTopButton />
+          </main>
         </Suspense>
       </body>
     </html>
