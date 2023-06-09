@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { FaArrowUp, FaArrowDown, FaRegCommentAlt } from "react-icons/fa";
+import { BiUpArrow, BiDownArrow } from "react-icons/bi";
 import shortenNumber from "@/util/shortenNumber";
 
 export type Post = {
@@ -74,13 +75,13 @@ const PostCard = (props: Post) => {
       </div>
       <div className="comment-container flex justify-between items-center border-t px-1">
         <div className="comment-icon pt-2 flex items-center gap-2">
-          <FaRegCommentAlt />
+          <FaRegCommentAlt size={20} />
           <p className="text-sm">{props.num_comments}</p>
         </div>
         <div className="post-votes flex items-center pr-4 text-sm gap-2">
-          <FaArrowUp />
+          <BiUpArrow size={20} />
           {props.ups}
-          <FaArrowDown />
+          <BiDownArrow size={20} />
         </div>
       </div>
     </div>
